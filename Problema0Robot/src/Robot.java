@@ -10,8 +10,7 @@ enum Directions {
 }
 
 public class Robot {
-    private double xPosition;
-    private double yPosition;
+    private double xPosition, yPosition;
     private Directions direction;
 
     public Robot(double xPosition, double yPosition, Directions direction) {
@@ -35,19 +34,11 @@ public class Robot {
     public void  move() {
         int directionIndex = this.direction.ordinal();
 
-        switch (directionIndex){
-            case 0:
-                this.yPosition++;
-                break;
-            case  1:
-                this.xPosition++;
-                break;
-            case 2:
-                this.yPosition--;
-                break;
-            case 3:
-                this.xPosition--;
-                break;
+        switch (directionIndex) {
+            case 0 -> this.yPosition++;
+            case 1 -> this.xPosition++;
+            case 2 -> this.yPosition--;
+            case 3 -> this.xPosition--;
         }
     }
 
