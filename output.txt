@@ -1,5 +1,5 @@
-87 18 81 68 43 86 30 40 66 12 Array
-18 68 86 40 12 evenIndexArray
-18 68 86 30 40 66 12 evenArray
-12 66 40 30 86 43 68 81 18 87 reverseArray
-87 12 firtsAndLast
+18 75 56 34 11 10 41 75 96 38 Array
+75 34 10 75 38 evenIndexArray
+18 56 34 10 96 38 evenArray
+38 96 75 41 10 11 34 56 75 18 reverseArray
+18 38 firtsAndLast

@@ -35,7 +35,7 @@ public class main {
             writer.close();
 
         }catch (Exception ex){
-            System.out.println("Erro" + ex.toString());
+            System.out.println(ex.getMessage());
         }
 
 
