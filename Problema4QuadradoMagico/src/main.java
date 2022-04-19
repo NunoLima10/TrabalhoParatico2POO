@@ -19,6 +19,7 @@ public class main {
 
             boolean validate = validateData(numbers,n);
 
+
             if (validate){
                 boolean result = magicSquare(matrix, n);
 
@@ -41,8 +42,7 @@ public class main {
     }
 
     public static boolean magicSquare(int[][]matrix, int n) {
-        int[] result = new int[n * 2 + 2];
-        int index = 0;
+        int result = 0;
         int sumMainDiagonal = 0;
         int sumSecondaryDiagonal = 0;
 
@@ -51,38 +51,32 @@ public class main {
             int sumColumns = 0;
 
             for (int j = 0; j < n; j++) {
-
                 sumLine += matrix[i][j];
                 sumColumns += matrix[j][i];
 
-                if (i==0){
+                if (i == 0){
                     // first line corners
-                    if(j == 0){ sumMainDiagonal += matrix[i][j];}
-                    if(j == n - 1){ sumSecondaryDiagonal += matrix[i][j];}
+                    if(j == 0) sumMainDiagonal += matrix[i][j];
+                    if(j == n - 1) sumSecondaryDiagonal += matrix[i][j];
                 }
                 if((i == j) && (i != 0) && (i != n - 1)){
                     sumMainDiagonal += matrix[i][j];
                     sumSecondaryDiagonal += matrix[i][j];
                 }
-                if (i == n-1){
+                if (i == n - 1){
                     // last line corners
-                    if(j == n - 1){sumMainDiagonal += matrix[i][j];}
-                    if(j == 0){ sumSecondaryDiagonal += matrix[i][j];}
-
+                    if(j == n - 1) sumMainDiagonal += matrix[i][j];
+                    if(j == 0) sumSecondaryDiagonal += matrix[i][j];
                 }
             }
-            result[index] = sumLine;
-            result[index + 1] = sumColumns;
-            index += 2;
+            if (result == 0){result = sumLine;}
+
+            if(result != sumLine) return false;
+            if(result != sumColumns) return false;
 
         }
-        result[index] = sumMainDiagonal;
-        result[index + 1] = sumSecondaryDiagonal;
-
-        for (int i = 0; i < result.length - 1; i++) {
-            if(result[i] != result[i +1]){return false;}
-        }
-        return true;
+        if(result != sumMainDiagonal) return false;
+        return result == sumSecondaryDiagonal;
     }
 
 
