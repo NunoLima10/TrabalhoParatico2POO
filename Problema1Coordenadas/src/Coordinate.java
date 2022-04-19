@@ -6,7 +6,7 @@ public class Coordinate {
         this.yPosition = yPosition;
     }
 
-    public double getxPosition() {return xPosition; }
+    public double getXPosition() {return xPosition; }
 
-    public double getyPosition() {return yPosition; }
+    public double getYPosition() {return yPosition; }
 }

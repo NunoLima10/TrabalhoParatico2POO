@@ -1,14 +1,13 @@
 import java.util.ArrayList;
 
 public class CannonBall {
-    private  double xPosition;
+    private double xPosition;
     private double yPosition;
 
     private double xVelocity;
-    private  double yVelocity;
+    private double yVelocity;
 
     ArrayList<Point> points = new ArrayList<>();
-
 
     public CannonBall(){
         this.xPosition = 0;

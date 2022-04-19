@@ -5,14 +5,15 @@ import java.util.Scanner;
 public class main {
     public static void main(String[] args) {
 
-        ArrayList<String>  customerNames = new ArrayList<>();
-        ArrayList<String>  customerPurchasesString = new ArrayList<>();
-        ArrayList<Double> customerPurchases = new ArrayList<>();
+        ArrayList<String> customerNames;
+        ArrayList<String> customerPurchasesString;
+        ArrayList<Double> customerPurchases;
 
         String pathPurchases = "Problema5Supermercado/src/purchases.txt";
         String pathNames = "Problema5Supermercado/src/customers.txt";
 
         customerNames = readFile(pathNames);
+
         customerPurchasesString = readFile(pathPurchases);
         customerPurchases = convertToDoubleArray(customerPurchasesString);
 
@@ -22,6 +23,7 @@ public class main {
         }
 
     }
+
     public static ArrayList<String> readFile(String path){
         ArrayList<String> lines = new ArrayList<>();
         try {
@@ -32,19 +34,21 @@ public class main {
                 lines.add(reader.nextLine());
             }
         }catch (Exception ex){
-           lines.add(ex.getMessage());
+            System.out.println(ex.getMessage());
         }
         return lines;
     }
-    public  static ArrayList<Double> convertToDoubleArray(ArrayList<String> arrayList){
+
+    public static ArrayList<Double> convertToDoubleArray(ArrayList<String> arrayList){
         ArrayList<Double> values = new ArrayList<>();
 
-        for (String text:arrayList) {
+        for (String text : arrayList) {
             double value = Double.parseDouble(text);
             values.add(value);
         }
         return  values;
     }
+
     public static  String nameOfBestCustomer(ArrayList<String>  customerNames, ArrayList<Double> customerPurchases){
         int bestCustomerIndex = 0;
         for (int i = 0; i < customerPurchases.size(); i++) {

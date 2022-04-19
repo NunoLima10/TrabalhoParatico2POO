@@ -6,9 +6,9 @@ public class Point {
         this.yPosition = yPosition;
     }
 
-    public double getxPosition() {return xPosition; }
+    public double getXPosition() {return xPosition; }
 
-    public double getyPosition() {return yPosition; }
+    public double getYPosition() {return yPosition; }
 
     public void  info(){
         System.out.println("Position x:" + this.xPosition);

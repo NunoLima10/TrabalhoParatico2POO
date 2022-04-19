@@ -1,5 +1,4 @@
 import java.io.*;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -13,18 +12,18 @@ public class main {
         ArrayList<Integer> evenArray = evens(array);
         ArrayList<Integer> reverseArray = reverse(array);
 
-        ArrayList<Integer> firtsAndLast = new ArrayList<>();
-        firtsAndLast.add(array.get(0));
-        firtsAndLast.add(array.get((array.size() - 1)));
+        ArrayList<Integer> firstsAndLast = new ArrayList<>();
+        firstsAndLast.add(array.get(0));
+        firstsAndLast.add(array.get((array.size() - 1)));
 
         String line0 = arrayToString( array ) +"Array\n";
         String line1 = arrayToString( evenIndexArray ) +"evenIndexArray\n";
         String line2 = arrayToString( evenArray ) +"evenArray\n";
         String line3 = arrayToString( reverseArray ) + "reverseArray\n";
-        String line4 = arrayToString( firtsAndLast ) + "firtsAndLast\n";
+        String line4 = arrayToString( firstsAndLast ) + "firstsAndLast\n";
 
         try {
-            FileWriter writer = new FileWriter("output.txt");
+            FileWriter writer = new FileWriter("Problema3Array/src/output.txt");
 
             writer.write(line0);
             writer.write(line1);
@@ -64,9 +63,8 @@ public class main {
     public static ArrayList<Integer> evens(ArrayList<Integer> array) {
         ArrayList<Integer> newArray =  new ArrayList<>();
 
-        for (int i = 0; i < array.size(); i++) {
-            int value = array.get(i);
-            if(value % 2 == 0) newArray.add(value);
+        for (int value : array) {
+            if (value % 2 == 0) newArray.add(value);
         }
         return newArray;
     }
@@ -80,14 +78,13 @@ public class main {
     }
 
     public static String arrayToString(ArrayList<Integer> array){
-        String text = "";
+        StringBuilder text = new StringBuilder();
 
-        for (int i = 0; i < array.size(); i++) {
-            String numberText = array.get(i).toString();
-            text = text + numberText + " ";
-
+        for (Integer value : array) {
+            String numberText = value.toString();
+            text.append(numberText).append(" ");
         }
-        return text;
+        return text.toString();
     }
 
 }

@@ -1,4 +1,4 @@
-import java.util.Arrays;
+
 import java.util.Scanner;
 
 public class main {
@@ -6,7 +6,7 @@ public class main {
         Scanner in = new Scanner(System.in);
 
         System.out.print("Insira o texto:  ");
-        String  text = in.nextLine();
+        String text = in.nextLine();
 
         text = rotateText(text);
 
